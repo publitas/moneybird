@@ -6,6 +6,7 @@ module Moneybird
     has_attributes %i(
       administration_id
       webhook_id
+      webhook_token
       entity_type
       entity_id
       state
