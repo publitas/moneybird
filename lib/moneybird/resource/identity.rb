@@ -22,4 +22,9 @@ module Moneybird::Resource
       updated_at
     )
   end
+
+
+  def custom_fields=(custom_fields)
+    @custom_fields ||= custom_fields.map { |custom_field| Moneybird::Resource::CustomField.build(custom_field) }
+  end
 end
