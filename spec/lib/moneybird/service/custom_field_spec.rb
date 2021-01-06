@@ -13,8 +13,9 @@ describe Moneybird::Service::CustomField do
     it "returns list of custom_fields" do
       custom_fields = service.all
 
-      custom_fields.length.must_equal 1
+      custom_fields.length.must_equal 2
       custom_fields.first.name.must_equal "Default"
+      custom_fields.first.source.must_equal "sales_invoice"
     end
   end
 end

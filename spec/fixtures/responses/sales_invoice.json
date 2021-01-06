@@ -99,7 +99,12 @@
   "total_price_incl_tax_base": "363.0",
   "url": "http://moneybird.dev/123/sales_invoices/7090c100b6c2c3a3f0dfb7c5f21431c5fa5b40817c091e4b1941234cc209d8ea/e807722dc8338cfa5b7ca895a78bd49868385b145730027758013f7a780a7890",
   "custom_fields": [
-
+    {
+      "id": 834854745210,
+      "administration_id": 123,
+      "name": "Default",
+      "value": "Value"
+    }
   ],
   "notes": [
 
