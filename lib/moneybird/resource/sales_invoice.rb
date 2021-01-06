@@ -22,12 +22,15 @@ module Moneybird::Resource
       invoice_id
       invoice_sequence_id
       language
+      marked_dubious_on
+      marked_uncollectible_on
       notes
       original_sales_invoice_id
       paid_at
       paused
       payment_conditions
       payment_reference
+      payment_url
       payments
       prices_are_incl_tax
       public_view_code
