@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Moneybird::Resource::SalesInvoice do
   let(:client) { Moneybird::Client.new('bearer token') }
-  let(:sales_invoice) { Moneybird::Resource::SalesInvoice.build(hash_response(:sales_invoices).first.merge('notes' => [hash_response(:note)], 'custom_fields' => [hash_response(:custom_field)])) }
+  let(:sales_invoice) { Moneybird::Resource::SalesInvoice.build(hash_response(:sales_invoices).first.merge('notes' => [hash_response(:note)])) }
 
   it "has a contact" do
     sales_invoice.contact.must_be_instance_of Moneybird::Resource::Contact
