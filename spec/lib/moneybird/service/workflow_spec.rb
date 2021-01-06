@@ -13,8 +13,8 @@ describe Moneybird::Service::Workflow do
     it "returns list of workflows" do
       workflows = service.all
 
-      workflows.length.must_equal 2
-      workflows.first.id.must_equal "143273834676487280"
+      _(workflows.length).must_equal 2
+      _(workflows.first.id).must_equal "143273834676487280"
     end
   end
 end

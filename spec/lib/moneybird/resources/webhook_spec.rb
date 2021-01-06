@@ -5,7 +5,7 @@ describe Moneybird::Resource::Webhook do
   let(:webhook) { Moneybird::Resource::Webhook.build(hash_response(:webhook)) }
 
   it "has no nested json representation" do
-    JSON.parse(webhook.to_json).must_equal(
+    _(JSON.parse(webhook.to_json)).must_equal(
       {
         "id" => "194733605680842680",
         "administration_id" => 123,

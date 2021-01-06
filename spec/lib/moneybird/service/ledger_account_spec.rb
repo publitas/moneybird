@@ -13,8 +13,8 @@ describe Moneybird::Service::LedgerAccount do
     it "returns list of ledger_accounts" do
       ledger_accounts = service.all
 
-      ledger_accounts.length.must_equal 3
-      ledger_accounts.first.id.must_equal "143273834459432032"
+      _(ledger_accounts.length).must_equal 3
+      _(ledger_accounts.first.id).must_equal "143273834459432032"
     end
   end
 end

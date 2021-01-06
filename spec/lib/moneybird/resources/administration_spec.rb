@@ -13,7 +13,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:sales_invoices))
 
     sales_invoices = administration.sales_invoices.all
-    sales_invoices.length.must_equal 3
+    _(sales_invoices.length).must_equal 3
   end
 
   it "has a list of contacts" do
@@ -21,7 +21,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:contacts))
 
     contacts = administration.contacts.all
-    contacts.length.must_equal 3
+    _(contacts.length).must_equal 3
   end
 
   it "has a list of estimates" do
@@ -29,7 +29,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:estimates))
 
     estimates = administration.estimates.all
-    estimates.length.must_equal 3
+    _(estimates.length).must_equal 3
   end
 
   it "has a list of products" do
@@ -37,7 +37,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:products))
 
     products = administration.products.all
-    products.length.must_equal 1
+    _(products.length).must_equal 1
   end
 
   it "has a list of webhooks" do
@@ -45,7 +45,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:webhooks))
 
     webhooks = administration.webhooks.all
-    webhooks.length.must_equal 1
+    _(webhooks.length).must_equal 1
   end
 
   it "has a list of workflows" do
@@ -53,7 +53,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:workflows))
 
     workflows = administration.workflows.all
-    workflows.length.must_equal 2
+    _(workflows.length).must_equal 2
   end
 
   it "has a list of tax_rates" do
@@ -61,7 +61,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:tax_rates))
 
     tax_rates = administration.tax_rates.all
-    tax_rates.length.must_equal 3
+    _(tax_rates.length).must_equal 3
   end
 
   it "has a list of recurring_sales_invoices" do
@@ -69,7 +69,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:recurring_sales_invoices))
 
     recurring_sales_invoices = administration.recurring_sales_invoices.all
-    recurring_sales_invoices.length.must_equal 3
+    _(recurring_sales_invoices.length).must_equal 3
   end
 
   it "has a list of identities" do
@@ -77,7 +77,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:identities))
 
     identities = administration.identities.all
-    identities.length.must_equal 1
+    _(identities.length).must_equal 1
   end
 
   it "has a list of financial_mutations" do
@@ -85,7 +85,7 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:financial_mutations))
 
     financial_mutations = administration.financial_mutations.all
-    financial_mutations.length.must_equal 1
+    _(financial_mutations.length).must_equal 1
   end
 
   it "has a list of financial_accounts" do
@@ -93,6 +93,6 @@ describe Moneybird::Resource::Administration do
         .to_return(status: 200, body: fixture_response(:financial_accounts))
 
     financial_accounts = administration.financial_accounts.all
-    financial_accounts.length.must_equal 1
+    _(financial_accounts.length).must_equal 1
   end
 end

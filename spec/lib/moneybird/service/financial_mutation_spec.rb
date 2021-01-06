@@ -13,8 +13,8 @@ describe Moneybird::Service::FinancialMutation do
     it "returns list of financial_mutations" do
       financial_mutations = service.all
 
-      financial_mutations.length.must_equal 1
-      financial_mutations.first.id.must_equal "143274048181240838"
+      _(financial_mutations.length).must_equal 1
+      _(financial_mutations.first.id).must_equal "143274048181240838"
     end
   end
 
@@ -27,12 +27,12 @@ describe Moneybird::Service::FinancialMutation do
 
     it "will link the booking" do
       service.link_booking(financial_mutation, {booking_type: "LedgerAccount", booking_id: '249211343214351830', price_base: 49.95})
-      
+
       assert_requested(:patch, "https://moneybird.com/api/v2/123/financial_mutations/456/link_booking", times: 1) do |req|
         parsed_body = JSON.parse(req.body)
-        parsed_body["booking_type"].must_equal "LedgerAccount"
-        parsed_body["booking_id"].must_equal "249211343214351830"
-        parsed_body["price_base"].must_equal 49.95
+        _(parsed_body["booking_type"]).must_equal "LedgerAccount"
+        _(parsed_body["booking_id"]).must_equal "249211343214351830"
+        _(parsed_body["price_base"]).must_equal 49.95
       end
     end
   end

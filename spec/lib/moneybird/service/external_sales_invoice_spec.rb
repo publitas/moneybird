@@ -13,8 +13,8 @@ describe Moneybird::Service::ExternalSalesInvoice do
     it "returns list of external_sales_invoices" do
       external_sales_invoices = service.all
 
-      external_sales_invoices.length.must_equal 1
-      external_sales_invoices.first.id.must_equal "283632324719936675"
+      _(external_sales_invoices.length).must_equal 1
+      _(external_sales_invoices.first.id).must_equal "283632324719936675"
     end
   end
 
@@ -28,7 +28,7 @@ describe Moneybird::Service::ExternalSalesInvoice do
       attributes.delete(:id)
 
       resource = service.build(attributes)
-      service.save(resource).must_equal resource
+      _(service.save(resource)).must_equal resource
     end
 
     it "updates when persisted" do
@@ -36,7 +36,7 @@ describe Moneybird::Service::ExternalSalesInvoice do
         .to_return(status: 200, body: fixture_response(:external_sales_invoice))
 
       resource = service.build(attributes)
-      service.save(resource).must_equal resource
+      _(service.save(resource)).must_equal resource
     end
   end
 

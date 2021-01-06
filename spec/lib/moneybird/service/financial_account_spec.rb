@@ -13,8 +13,8 @@ describe Moneybird::Service::FinancialAccount do
     it "returns list of financial_accounts" do
       financial_accounts = service.all
 
-      financial_accounts.length.must_equal 1
-      financial_accounts.first.id.must_equal "143274045018735618"
+      _(financial_accounts.length).must_equal 1
+      _(financial_accounts.first.id).must_equal "143274045018735618"
     end
   end
 end

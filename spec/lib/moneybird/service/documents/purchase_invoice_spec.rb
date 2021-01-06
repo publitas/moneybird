@@ -13,8 +13,8 @@ describe Moneybird::Service::Document::PurchaseInvoice do
     it "returns list of purchase_invoices" do
       purchase_invoices = service.all
 
-      purchase_invoices.length.must_equal 1
-      purchase_invoices.first.id.must_equal "151541225475802119"
+      _(purchase_invoices.length).must_equal 1
+      _(purchase_invoices.first.id).must_equal "151541225475802119"
     end
   end
 end

@@ -13,8 +13,8 @@ describe Moneybird::Service::SalesInvoice do
     it "returns list of sales_invoices" do
       sales_invoices = service.all
 
-      sales_invoices.length.must_equal 3
-      sales_invoices.first.id.must_equal "194733567493801235"
+      _(sales_invoices.length).must_equal 3
+      _(sales_invoices.first.id).must_equal "194733567493801235"
     end
   end
 
@@ -28,7 +28,7 @@ describe Moneybird::Service::SalesInvoice do
       attributes.delete(:id)
 
       resource = service.build(attributes)
-      service.save(resource).must_equal resource
+      _(service.save(resource)).must_equal resource
     end
 
     it "updates when persisted" do
@@ -36,7 +36,7 @@ describe Moneybird::Service::SalesInvoice do
         .to_return(status: 200, body: fixture_response(:sales_invoice))
 
       resource = service.build(attributes)
-      service.save(resource).must_equal resource
+      _(service.save(resource)).must_equal resource
     end
   end
 
@@ -47,7 +47,7 @@ describe Moneybird::Service::SalesInvoice do
     end
     let(:sales_invoice) { Moneybird::Resource::SalesInvoice.new(client: client, id: '456') }
     it "will send the invoice" do
-      service.send_invoice(sales_invoice).must_equal sales_invoice
+      _(service.send_invoice(sales_invoice)).must_equal sales_invoice
     end
   end
 
@@ -58,7 +58,7 @@ describe Moneybird::Service::SalesInvoice do
     end
     let(:sales_invoice) { Moneybird::Resource::SalesInvoice.new(client: client, id: '456') }
     it "will mark the invoice as uncollectible" do
-      service.mark_as_uncollectible(sales_invoice).must_equal sales_invoice
+      _(service.mark_as_uncollectible(sales_invoice)).must_equal sales_invoice
     end
   end
 end
