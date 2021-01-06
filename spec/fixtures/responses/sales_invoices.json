@@ -106,7 +106,12 @@
     "total_discount": "0.0",
     "url": "http://moneybird.dev/123/sales_invoices/19625755314e0e441429848b52afb0edb2138e51da11fa6bcc8aee69fe7c1a0f/7ab9c063c7d9bde8103aa292f209607fd2f44b637d878b6389ef180822446132",
     "custom_fields": [
-
+      {
+        "id": 834854745210,
+        "administration_id": 123,
+        "name": "Default",
+        "value": "Value"
+      }
     ],
     "notes": [
 
@@ -256,7 +261,12 @@
     "total_discount": "0.0",
     "url": "http://moneybird.dev/123/sales_invoices/ee32883b444f2e1b4cca79df9d17e22ae8dd7dd114ffa92bf39330f09f3eef8d/7ab9c063c7d9bde8103aa292f209607fd2f44b637d878b6389ef180822446132",
     "custom_fields": [
-
+      {
+        "id": 834854745210,
+        "administration_id": 123,
+        "name": "Default",
+        "value": "Value"
+      }
     ],
     "notes": [
 
@@ -406,7 +416,12 @@
     "total_discount": "0.0",
     "url": "http://moneybird.dev/123/sales_invoices/74a2cb84987e0a48aceddd29d582962ca832cb088c729f5c70386ee18a6b31f5/7ab9c063c7d9bde8103aa292f209607fd2f44b637d878b6389ef180822446132",
     "custom_fields": [
-
+      {
+        "id": 834854745210,
+        "administration_id": 123,
+        "name": "Default",
+        "value": "Value"
+      }
     ],
     "notes": [
 

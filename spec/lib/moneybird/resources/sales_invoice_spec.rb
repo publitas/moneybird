@@ -19,4 +19,8 @@ describe Moneybird::Resource::SalesInvoice do
   it "has events" do
     sales_invoice.events.first.must_be_instance_of Moneybird::Resource::Generic::Event
   end
+
+  it "has custom_fields" do
+    sales_invoice.custom_fields.first.must_be_instance_of Moneybird::Resource::CustomField
+  end
 end

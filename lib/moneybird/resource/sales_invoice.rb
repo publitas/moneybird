@@ -84,5 +84,9 @@ module Moneybird::Resource
     def events=(events)
       @events ||= events.map{ |event| Moneybird::Resource::Generic::Event.build(event) }
     end
+
+    def custom_fields=(custom_fields)
+      @custom_fields ||= custom_fields.map { |custom_field| Moneybird::Resource::CustomField.build(custom_field) }
+    end
   end
 end

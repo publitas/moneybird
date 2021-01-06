@@ -7,4 +7,8 @@ describe Moneybird::Resource::Contact do
   it "has events" do
     contact.events.first.must_be_instance_of Moneybird::Resource::Generic::Event
   end
+
+  it "has custom_fields" do
+    contact.custom_fields.first.must_be_instance_of Moneybird::Resource::CustomField
+  end
 end

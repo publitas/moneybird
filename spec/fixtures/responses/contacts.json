@@ -104,7 +104,12 @@
 
     ],
     "custom_fields": [
-
+      {
+        "id": 3834854745210,
+        "administration_id": 123,
+        "name": "Default",
+        "value": "Value"
+      }
     ],
     "events": [
       {
@@ -164,7 +169,12 @@
 
     ],
     "custom_fields": [
-
+      {
+        "id": 3834854745210,
+        "administration_id": 123,
+        "name": "Default",
+        "value": "Value"
+      }
     ],
     "events": [
       {
