@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
     - name: Set up Ruby
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby_version }}
     - name: Build and test with Rake
