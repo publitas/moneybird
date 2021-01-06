@@ -56,6 +56,10 @@ module Moneybird::Resource
       Moneybird::Service::Workflow.new(@client, id)
     end
 
+    def custom_fields
+      Moneybird::Service::CustomField.new(@client, id)
+    end
+
     def document_styles
       Moneybird::Service::DocumentStyle.new(@client, id)
     end
