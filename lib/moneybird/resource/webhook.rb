@@ -10,6 +10,7 @@ module Moneybird::Resource
       last_http_status
       last_http_body
       events
+      token
     )
 
     def to_json
