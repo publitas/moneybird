@@ -37,13 +37,12 @@ module Moneybird
     %i[get patch post delete].each do |call|
       define_method call do |path, options = {}|
         http.public_send(call, "/api/#{version}/#{path}", options).body
-      end
-    end
 
-    def get_redirect_url(path, options = {})
-      res = http.get("/api/#{version}/#{path}", options)
-    rescue Faraday::ParsingError => e
-      e.response['Location']
+      rescue Faraday::ParsingError => e
+        return e.response['Location'] if e.response.status == 302
+
+        raise e
+      end
     end
 
     def get_all_pages(path, options = {})
