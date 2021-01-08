@@ -69,13 +69,14 @@ require 'moneybird/resource/workflow'
 # Traits
 require 'moneybird/traits/administration_service'
 require 'moneybird/traits/delete'
+require 'moneybird/traits/download_pdf'
 require 'moneybird/traits/find'
 require 'moneybird/traits/find_all'
 require 'moneybird/traits/mark_as_uncollectible'
 require 'moneybird/traits/save'
+require 'moneybird/traits/send_invoice'
 require 'moneybird/traits/service'
 require 'moneybird/traits/synchronization' # Depends on synchronization resource
-require 'moneybird/traits/send_invoice'
 
 ##
 # Services (all depend on traits and it's associated resource)

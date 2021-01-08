@@ -62,6 +62,11 @@ module Moneybird::Resource
       @contact = Moneybird::Resource::Contact.build(attributes)
     end
 
+    def download_pdf(options = {})
+      invoice_service = Moneybird::Service::SalesInvoice.new(client, administration_id)
+      invoice_service.download_pdf(self, options)
+    end
+
     def send_invoice(options = {})
       invoice_service = Moneybird::Service::SalesInvoice.new(client, administration_id)
       invoice_service.send_invoice(self, options)

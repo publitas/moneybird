@@ -40,6 +40,12 @@ module Moneybird
       end
     end
 
+    def get_redirect_url(path, options = {})
+      res = http.get("/api/#{version}/#{path}", options)
+    rescue Faraday::ParsingError => e
+      e.response['Location']
+    end
+
     def get_all_pages(path, options = {})
       get_each_page(path, options).inject([]) do |array, objects|
         array += objects
