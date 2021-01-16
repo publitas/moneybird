@@ -5,10 +5,10 @@ describe Moneybird::Resource::Contact do
   let(:contact) { Moneybird::Resource::Contact.build(hash_response(:contact)) }
 
   it "has events" do
-    contact.events.first.must_be_instance_of Moneybird::Resource::Generic::Event
+    _(contact.events.first).must_be_instance_of Moneybird::Resource::Generic::Event
   end
 
   it "has custom_fields" do
-    contact.custom_fields.first.must_be_instance_of Moneybird::Resource::CustomField
+    _(contact.custom_fields.first).must_be_instance_of Moneybird::Resource::CustomField
   end
 end

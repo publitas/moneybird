@@ -13,8 +13,8 @@ describe Moneybird::Service::Identity do
     it "returns list of identities" do
       identities = service.all
 
-      identities.length.must_equal 1
-      identities.first.company_name.must_equal "Parkietje B.V."
+      _(identities.length).must_equal 1
+      _(identities.first.company_name).must_equal "Parkietje B.V."
     end
   end
 end

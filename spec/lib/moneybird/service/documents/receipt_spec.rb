@@ -13,8 +13,8 @@ describe Moneybird::Service::Document::Receipt do
     it "returns list of receipts" do
       receipts = service.all
 
-      receipts.length.must_equal 1
-      receipts.first.id.must_equal "230699456938378807"
+      _(receipts.length).must_equal 1
+      _(receipts.first.id).must_equal "230699456938378807"
     end
   end
 end

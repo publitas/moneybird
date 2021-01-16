@@ -16,18 +16,18 @@ describe Moneybird::Middleware::Pagination do
   end
 
   it 'returns a links object' do
-    pagination_links_header.must_be_instance_of Moneybird::Middleware::Pagination::Links
+    _(pagination_links_header).must_be_instance_of Moneybird::Middleware::Pagination::Links
   end
 
   it 'returns a next url' do
-    pagination_links_header.next.must_equal 'https://moneybird.com/api/v2/administrations.json?page=3'
+    _(pagination_links_header.next).must_equal 'https://moneybird.com/api/v2/administrations.json?page=3'
   end
 
   it 'returns a prev url' do
-    pagination_links_header.prev.must_equal 'https://moneybird.com/api/v2/administrations.json?page=1'
+    _(pagination_links_header.prev).must_equal 'https://moneybird.com/api/v2/administrations.json?page=1'
   end
 
   it 'returns a previous url' do
-    pagination_links_header.previous.must_equal 'https://moneybird.com/api/v2/administrations.json?page=1'
+    _(pagination_links_header.previous).must_equal 'https://moneybird.com/api/v2/administrations.json?page=1'
   end
 end

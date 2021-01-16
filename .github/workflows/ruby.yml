@@ -4,20 +4,29 @@ on: [push, pull_request]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         ruby_version: [2.5, 2.6, 2.7, 3.0]
+
     steps:
     - uses: actions/checkout@v2.3.4
+
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby_version }}
+
     - name: Build and test with Rake
+      env:
+        CI: true
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
         bundle exec rake
+
+    - name: Publish code coverage
+      uses: paambaati/codeclimate-action@v2.7.5
+      env:
+        CC_TEST_REPORTER_ID: 0b8e41ecbc26637a7db4e6e9d4581c445441674f689016ab45fb5c51242b59bf

@@ -13,8 +13,8 @@ describe Moneybird::Service::Contact do
     it "returns list of contacts" do
       contacts = service.all
 
-      contacts.length.must_equal 3
-      contacts.first.company_name.must_equal "Foobar Holding B.V."
+      _(contacts.length).must_equal 3
+      _(contacts.first.company_name).must_equal "Foobar Holding B.V."
     end
   end
 
@@ -22,7 +22,7 @@ describe Moneybird::Service::Contact do
     it "returns a non persisted contact" do
       contact = service.build(hash_response(:contacts).first)
 
-      contact.company_name.must_equal "Foobar Holding B.V."
+      _(contact.company_name).must_equal "Foobar Holding B.V."
     end
   end
 
@@ -35,7 +35,7 @@ describe Moneybird::Service::Contact do
     it "creates a contact" do
       contact = service.create({company_name: 'ACME', firstname: 'Foo', lastname: 'Bar'})
 
-      contact.id.must_equal hash_response(:contact)['id']
+      _(contact.id).must_equal hash_response(:contact)['id']
     end
   end
 
@@ -50,7 +50,7 @@ describe Moneybird::Service::Contact do
     it "updates a contact" do
       contact = service.update({id: id, company_name: 'ACME', firstname: 'Foo', lastname: 'Bar'})
 
-      contact.id.must_equal id
+      _(contact.id).must_equal id
     end
   end
 
@@ -64,7 +64,7 @@ describe Moneybird::Service::Contact do
       attributes.delete(:id)
 
       resource = service.build(attributes)
-      service.save(resource).must_equal resource
+      _(service.save(resource)).must_equal resource
     end
 
     it "updates when persisted" do
@@ -72,7 +72,7 @@ describe Moneybird::Service::Contact do
         .to_return(status: 200, body: fixture_response(:contact))
 
       resource = service.build(attributes)
-      service.save(resource).must_equal resource
+      _(service.save(resource)).must_equal resource
     end
   end
 
@@ -85,7 +85,7 @@ describe Moneybird::Service::Contact do
         .to_return(status: 204, body: '')
 
       resource = service.build(attributes)
-      service.delete(resource).must_equal true
+      _(service.delete(resource)).must_equal true
     end
   end
 
@@ -97,7 +97,7 @@ describe Moneybird::Service::Contact do
         .to_return(status: 200, body: fixture_response(:contact))
 
       resource = service.find(id)
-      resource.id.must_equal id
+      _(resource.id).must_equal id
     end
 
     it "returns nil if record does not exist" do
@@ -118,7 +118,7 @@ describe Moneybird::Service::Contact do
         .to_return(status: 200, body: fixture_response(:contact))
 
       resource = service.find_by_customer_id(customer_id)
-      resource.customer_id.must_equal customer_id
+      _(resource.customer_id).must_equal customer_id
     end
 
     it "returns nil if record does not exist" do
@@ -138,15 +138,15 @@ describe Moneybird::Service::Contact do
     end
 
     it 'retuns an array' do
-      service.synchronization.must_be_instance_of Array
+      _(service.synchronization).must_be_instance_of Array
     end
 
     it 'returns synchorization resource objects' do
-      service.synchronization.first.must_be_instance_of Moneybird::Resource::Synchronization
+      _(service.synchronization.first).must_be_instance_of Moneybird::Resource::Synchronization
     end
 
     it 'returns synchorization with correct data' do
-      service.synchronization.map(&:id).must_equal %w[207517650930107558 207517650975196329]
+      _(service.synchronization.map(&:id)).must_equal %w[207517650930107558 207517650975196329]
     end
   end
 end

@@ -13,8 +13,8 @@ describe Moneybird::Service::TaxRate do
     it "returns list of tax_rates" do
       tax_rates = service.all
 
-      tax_rates.length.must_equal 3
-      tax_rates.first.id.must_equal "143273834510812265"
+      _(tax_rates.length).must_equal 3
+      _(tax_rates.first.id).must_equal "143273834510812265"
     end
   end
 end

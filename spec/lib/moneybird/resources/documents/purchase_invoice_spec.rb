@@ -8,22 +8,22 @@ describe Moneybird::Resource::Documents::PurchaseInvoice do
   end
 
   it "has a contact" do
-    purchase_invoice.contact.must_be_instance_of Moneybird::Resource::Contact
+    _(purchase_invoice.contact).must_be_instance_of Moneybird::Resource::Contact
   end
 
   it "has details" do
-    purchase_invoice.details.first.must_be_instance_of Moneybird::Resource::Invoice::Details
+    _(purchase_invoice.details.first).must_be_instance_of Moneybird::Resource::Invoice::Details
   end
 
   it "has notes" do
-    purchase_invoice.notes.first.must_be_instance_of Moneybird::Resource::Generic::Note
+    _(purchase_invoice.notes.first).must_be_instance_of Moneybird::Resource::Generic::Note
   end
 
   it "has events" do
-    purchase_invoice.events.first.must_be_instance_of Moneybird::Resource::Generic::Event
+    _(purchase_invoice.events.first).must_be_instance_of Moneybird::Resource::Generic::Event
   end
 
   it "has payments" do
-    purchase_invoice.payments.first.must_be_instance_of Moneybird::Resource::Invoice::Payment
+    _(purchase_invoice.payments.first).must_be_instance_of Moneybird::Resource::Invoice::Payment
   end
 end

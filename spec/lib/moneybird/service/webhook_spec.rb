@@ -13,8 +13,8 @@ describe Moneybird::Service::Webhook do
     it "returns list of webhooks" do
       webhooks = service.all
 
-      webhooks.length.must_equal 1
-      webhooks.first.url.must_equal "http://www.mocky.io/v2/5185415ba171ea3a00704eed"
+      _(webhooks.length).must_equal 1
+      _(webhooks.first.url).must_equal "http://www.mocky.io/v2/5185415ba171ea3a00704eed"
     end
   end
 
@@ -27,7 +27,7 @@ describe Moneybird::Service::Webhook do
     it "creates a webhook" do
       webhook = service.create({url: "http://www.example.com/webhook"})
 
-      webhook.id.must_equal hash_response(:webhook)['id']
+      _(webhook.id).must_equal hash_response(:webhook)['id']
     end
   end
 end

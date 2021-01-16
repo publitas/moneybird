@@ -13,8 +13,8 @@ describe Moneybird::Service::Product do
     it "returns list of products" do
       products = service.all
 
-      products.length.must_equal 1
-      products.first.id.must_equal "143274140103607298"
+      _(products.length).must_equal 1
+      _(products.first.id).must_equal "143274140103607298"
     end
   end
 end

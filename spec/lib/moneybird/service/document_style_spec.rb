@@ -13,8 +13,8 @@ describe Moneybird::Service::DocumentStyle do
     it "returns list of document_styles" do
       document_styles = service.all
 
-      document_styles.length.must_equal 1
-      document_styles.first.name.must_equal "Default"
+      _(document_styles.length).must_equal 1
+      _(document_styles.first.name).must_equal "Default"
     end
   end
 end
