@@ -62,7 +62,7 @@ describe Moneybird::Service::SalesInvoice do
           })
     end
     it "will return download url" do
-      service.download_pdf(456).must_equal 'https://storage.moneybird.dev/036ce3bd95c725c04aa5b81ee9419f9b49246a4b91483c2ad913e31a99204fa6/36cabf4c517ca62001f1bd3c9e014b0cacb2f77e9c24ab432c72ca6dc1820b6e/download'
+      _(service.download_pdf(456)).must_equal 'https://storage.moneybird.dev/036ce3bd95c725c04aa5b81ee9419f9b49246a4b91483c2ad913e31a99204fa6/36cabf4c517ca62001f1bd3c9e014b0cacb2f77e9c24ab432c72ca6dc1820b6e/download'
     end
   end
 
