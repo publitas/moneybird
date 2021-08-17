@@ -24,6 +24,6 @@ module Moneybird::Resource
   end
 
   def custom_fields=(custom_fields)
-    @custom_fields ||= custom_fields.map { |custom_field| Moneybird::Resource::CustomField.build(custom_field) }
+    @custom_fields = custom_fields.map { |custom_field| Moneybird::Resource::CustomField.build(custom_field) }
   end
 end
