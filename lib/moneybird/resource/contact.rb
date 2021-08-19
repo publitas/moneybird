@@ -54,15 +54,15 @@ module Moneybird::Resource
     )
 
     def notes=(notes)
-      @notes ||= notes.map{ |note| Moneybird::Resource::Generic::Note.build(note) }
+      @notes = notes.map{ |note| Moneybird::Resource::Generic::Note.build(note) }
     end
 
     def events=(events)
-      @events ||= events.map{ |event| Moneybird::Resource::Generic::Event.build(event) }
+      @events = events.map{ |event| Moneybird::Resource::Generic::Event.build(event) }
     end
 
     def custom_fields=(custom_fields)
-      @custom_fields ||= custom_fields.map { |custom_field| Moneybird::Resource::CustomField.build(custom_field) }
+      @custom_fields = custom_fields.map { |custom_field| Moneybird::Resource::CustomField.build(custom_field) }
     end
   end
 end

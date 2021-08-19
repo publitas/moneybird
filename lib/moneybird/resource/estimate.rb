@@ -48,15 +48,15 @@ module Moneybird::Resource
     )
 
     def notes=(notes)
-      @notes ||= notes.map{ |note| Moneybird::Resource::Generic::Note.build(note) }
+      @notes = notes.map{ |note| Moneybird::Resource::Generic::Note.build(note) }
     end
 
     def contact=(attributes)
-      @contact ||= Moneybird::Resource::Contact.build(attributes)
+      @contact = Moneybird::Resource::Contact.build(attributes)
     end
 
     def details=(line_items)
-      @details ||= line_items.map{ |line_item| Moneybird::Resource::Invoice::Details.build(line_item) }
+      @details = line_items.map{ |line_item| Moneybird::Resource::Invoice::Details.build(line_item) }
     end
   end
 end

@@ -35,7 +35,7 @@ module Moneybird::Resource::Documents
     )
 
     def notes=(notes)
-      @notes ||= notes.map{ |note| Moneybird::Resource::Generic::Note.build(note) }
+      @notes = notes.map{ |note| Moneybird::Resource::Generic::Note.build(note) }
     end
 
     def contact=(attributes)
@@ -47,11 +47,11 @@ module Moneybird::Resource::Documents
     end
 
     def events=(events)
-      @events ||= events.map{ |event| Moneybird::Resource::Generic::Event.build(event) }
+      @events = events.map{ |event| Moneybird::Resource::Generic::Event.build(event) }
     end
 
     def payments=(payments)
-      @payments ||= payments.map{ |payment| Moneybird::Resource::Invoice::Payment.build(payment) }
+      @payments = payments.map{ |payment| Moneybird::Resource::Invoice::Payment.build(payment) }
     end
   end
 end
