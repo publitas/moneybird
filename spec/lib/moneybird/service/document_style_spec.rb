@@ -7,7 +7,7 @@ describe Moneybird::Service::DocumentStyle do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/document_styles')
-        .to_return(status: 200, body: fixture_response(:document_styles))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:document_styles))
     end
 
     it "returns list of document_styles" do

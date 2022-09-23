@@ -2,7 +2,7 @@
 
 module Moneybird
   module Middleware
-    class ErrorHandling < Faraday::Response::Middleware
+    class ErrorHandling < Faraday::Middleware
       ERROR_MAP = {
         400 => Moneybird::HttpError::BadRequest,
         401 => Moneybird::HttpError::AuthorizationRequired,

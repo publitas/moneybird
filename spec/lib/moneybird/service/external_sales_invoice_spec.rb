@@ -7,7 +7,7 @@ describe Moneybird::Service::ExternalSalesInvoice do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/external_sales_invoices')
-        .to_return(status: 200, body: fixture_response(:external_sales_invoices))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:external_sales_invoices))
     end
 
     it "returns list of external_sales_invoices" do
@@ -24,7 +24,7 @@ describe Moneybird::Service::ExternalSalesInvoice do
 
     it "creates when not persisted" do
       stub_request(:post, "https://moneybird.com/api/v2/123/external_sales_invoices")
-        .to_return(status: 201, body: fixture_response(:external_sales_invoice))
+        .to_return(status: 201, headers: { content_type: "application/json" }, body: fixture_response(:external_sales_invoice))
       attributes.delete(:id)
 
       resource = service.build(attributes)
@@ -33,7 +33,7 @@ describe Moneybird::Service::ExternalSalesInvoice do
 
     it "updates when persisted" do
       stub_request(:patch, "https://moneybird.com/api/v2/123/external_sales_invoices/#{id}")
-        .to_return(status: 200, body: fixture_response(:external_sales_invoice))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:external_sales_invoice))
 
       resource = service.build(attributes)
       _(service.save(resource)).must_equal resource

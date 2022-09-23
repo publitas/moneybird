@@ -7,7 +7,7 @@ describe Moneybird::Service::Administration do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/administrations')
-        .to_return(status: 200, body: fixture_response(:administrations))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:administrations))
     end
 
     it "returns list of administrations" do

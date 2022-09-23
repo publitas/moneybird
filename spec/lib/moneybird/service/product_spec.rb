@@ -7,7 +7,7 @@ describe Moneybird::Service::Product do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/products')
-        .to_return(status: 200, body: fixture_response(:products))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:products))
     end
 
     it "returns list of products" do

@@ -10,6 +10,7 @@ describe Moneybird::Middleware::Pagination do
         status: 200,
         body: fixture_response(:administrations),
         headers: {
+          content_type: "application/json",
           'Link' => '<https://moneybird.com/api/v2/administrations.json?page=3>; rel="next", <https://moneybird.com/api/v2/administrations.json?page=1>; rel="prev"'
         }
       )

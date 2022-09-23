@@ -7,7 +7,7 @@ describe Moneybird::Service::TaxRate do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/tax_rates')
-        .to_return(status: 200, body: fixture_response(:tax_rates))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:tax_rates))
     end
 
     it "returns list of tax_rates" do

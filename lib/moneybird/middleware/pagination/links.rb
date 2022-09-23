@@ -2,7 +2,7 @@ require 'link_header'
 
 module Moneybird
   module Middleware
-    class Pagination < Faraday::Response::Middleware
+    class Pagination < Faraday::Middleware
       class Links
         attr_accessor :first, :prev, :current, :next, :last
         alias previous prev
