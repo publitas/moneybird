@@ -2,7 +2,7 @@ require 'link_header'
 
 module Moneybird
   module Middleware
-    class Pagination < Faraday::Response::Middleware
+    class Pagination < Faraday::Middleware
       def on_complete(response)
         return unless response[:response_headers]
         link_header = response[:response_headers][:link]
