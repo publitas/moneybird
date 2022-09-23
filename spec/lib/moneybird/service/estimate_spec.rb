@@ -7,7 +7,7 @@ describe Moneybird::Service::Estimate do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/estimates')
-        .to_return(status: 200, body: fixture_response(:estimates))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:estimates))
     end
 
     it "returns list of estimates" do

@@ -7,7 +7,7 @@ describe Moneybird::Service::CustomField do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/custom_fields')
-        .to_return(status: 200, body: fixture_response(:custom_fields))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:custom_fields))
     end
 
     it "returns list of custom_fields" do

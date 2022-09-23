@@ -7,7 +7,7 @@ describe Moneybird::Service::Document::PurchaseInvoice do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/documents/purchase_invoices')
-        .to_return(status: 200, body: fixture_response(:purchase_invoices))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:purchase_invoices))
     end
 
     it "returns list of purchase_invoices" do

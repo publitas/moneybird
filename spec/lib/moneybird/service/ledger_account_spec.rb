@@ -7,7 +7,7 @@ describe Moneybird::Service::LedgerAccount do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/ledger_accounts')
-        .to_return(status: 200, body: fixture_response(:ledger_accounts))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:ledger_accounts))
     end
 
     it "returns list of ledger_accounts" do

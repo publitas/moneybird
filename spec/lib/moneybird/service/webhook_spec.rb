@@ -7,7 +7,7 @@ describe Moneybird::Service::Webhook do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/webhooks')
-        .to_return(status: 200, body: fixture_response(:webhooks))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:webhooks))
     end
 
     it "returns list of webhooks" do
@@ -21,7 +21,7 @@ describe Moneybird::Service::Webhook do
   describe "#create" do
     before do
       stub_request(:post, 'https://moneybird.com/api/v2/123/webhooks')
-        .to_return(status: 200, body: fixture_response(:webhook))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:webhook))
     end
 
     it "creates a webhook" do

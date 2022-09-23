@@ -7,7 +7,7 @@ describe Moneybird::Service::Document::Receipt do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/documents/receipts')
-        .to_return(status: 200, body: fixture_response(:receipts))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:receipts))
     end
 
     it "returns list of receipts" do

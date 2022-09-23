@@ -7,7 +7,7 @@ describe Moneybird::Service::FinancialAccount do
   describe "#all" do
     before do
       stub_request(:get, 'https://moneybird.com/api/v2/123/financial_accounts')
-        .to_return(status: 200, body: fixture_response(:financial_accounts))
+        .to_return(status: 200, headers: { content_type: "application/json" }, body: fixture_response(:financial_accounts))
     end
 
     it "returns list of financial_accounts" do
