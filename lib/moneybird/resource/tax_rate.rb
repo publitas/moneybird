@@ -11,6 +11,7 @@ module Moneybird::Resource
       tax_rate_type
       show_tax
       active
+      country
       created_at
       updated_at
     )
