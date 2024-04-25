@@ -11,6 +11,7 @@ module Moneybird::Resource::Invoice
       description
       id
       ledger_account_id
+      mandatory_tax_text
       period
       price
       product_id
