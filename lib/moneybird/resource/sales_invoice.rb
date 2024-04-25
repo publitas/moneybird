@@ -4,10 +4,12 @@ module Moneybird::Resource
     extend Moneybird::Resource::ClassMethods
 
     has_attributes %i(
-      attachments
       administration_id
+      attachments
       contact
       contact_id
+      contact_person
+      contact_person_id
       created_at
       currency
       custom_fields
@@ -16,6 +18,7 @@ module Moneybird::Resource
       document_style_id
       draft_id
       due_date
+      events
       id
       identity_id
       invoice_date
@@ -24,7 +27,9 @@ module Moneybird::Resource
       language
       marked_dubious_on
       marked_uncollectible_on
+      next_reminder
       notes
+      original_estimate_id
       original_sales_invoice_id
       paid_at
       paused
@@ -34,9 +39,12 @@ module Moneybird::Resource
       payments
       prices_are_incl_tax
       public_view_code
+      public_view_code_expires_at
       recurring_sales_invoice_id
       reference
+      reminder_count
       sent_at
+      short_payment_reference
       state
       tax_totals
       total_discount
@@ -51,7 +59,6 @@ module Moneybird::Resource
       url
       version
       workflow_id
-      events
     )
 
     def notes=(notes)
