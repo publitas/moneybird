@@ -7,11 +7,13 @@ module Moneybird::Resource
       address1
       address2
       administration_id
+      archived
       attention
       bank_account
       chamber_of_commerce
       city
       company_name
+      contact_people
       country
       created_at
       credit_card_number
@@ -28,6 +30,7 @@ module Moneybird::Resource
       id
       invoice_workflow_id
       lastname
+      moneybird_payments_mandate
       notes
       phone
       sales_invoices_url
