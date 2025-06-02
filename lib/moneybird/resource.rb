@@ -20,8 +20,6 @@ module Moneybird
       attributes.each do |attribute, value|
         if respond_to?(writer = attribute.to_s + '=')
           send(writer, value)
-        else
-          self.class.logger.warn "#{self.class} does not have an `#{attribute}' attribute"
         end
       end
     end
